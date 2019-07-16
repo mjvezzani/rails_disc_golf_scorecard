@@ -1,0 +1,32 @@
+<%= form_with(model: hole, local: true) do |form| %>
+  <% if hole.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hole.errors.count, "error") %> prohibited this hole from being saved:</h2>
+
+      <ul>
+      <% hole.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.number_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :course_id %>
+    <%= form.number_field :course_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :par %>
+    <%= form.number_field :par %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
